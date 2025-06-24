@@ -127,48 +127,51 @@
 
     /* Responsive layout for smaller screens */
     @media (max-width: 768px) {
-      body {
-        flex-direction: column;
-      }
+  body {
+    flex-direction: column;
+  }
 
-      nav {
-        position: static;
-        width: 100%;
-        height: auto;
-        box-shadow: none;
-        display: flex;
-        flex-direction: row;
-        overflow-x: auto;
-      }
+  nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    background: #333;
+    z-index: 999;
+  }
 
-      nav ul {
-        display: flex;
-        flex-direction: row;
-        flex-wrap: nowrap;
-        overflow-x: auto;
-        width: 100%;
-      }
+  nav ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 0;
+    margin: 0;
+  }
 
-      nav ul li {
-        margin: 0;
-        flex: 1;
-        text-align: center;
-      }
+  nav ul li {
+    margin: 0;
+    flex: 1;
+    text-align: center;
+  }
 
-      nav ul li a {
-        padding: 10px;
-      }
+  nav ul li a {
+    padding: 10px;
+    display: block;
+    white-space: nowrap;
+  }
 
-      main {
-        margin-left: 0;
-        padding: 10px;
-      }
+  main {
+    margin-left: 0;
+    padding: 70px 10px 20px; /* top padding to avoid overlap with fixed nav */
+  }
 
-      section {
-        margin: 10px auto;
-        padding: 15px;
-      }
-    }
+  section {
+    margin: 10px auto;
+    padding: 15px;
+  }
+}
   </style>
 </head>
 
@@ -212,7 +215,7 @@
 
     <main>
         <header>
-            <h1>Sam Mersch - Profile Page2</h1>
+            <h1>Sam Mersch - Profile Page</h1>
         </header>
 <div>
         <section id="profile">
