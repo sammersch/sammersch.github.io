@@ -125,11 +125,82 @@
       height: auto;
     }
 
-    /* Responsive layout for smaller screens */
-    @media (max-width: 768px) {
+    
+.hamburger {
+  display: none;
+  font-size: 30px;
+  color: white;
+  background: #333;
+  padding: 10px 15px;
+  cursor: pointer;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1001;
+}
+
+/* Responsive layout for smaller screens */
+@media (max-width: 768px) {
   body {
     flex-direction: column;
   }
+
+  .hamburger {
+    display: block;
+  }
+
+  nav {
+    position: fixed;
+    top: 50px;
+    left: 0;
+    width: 100%;
+    height: auto;
+    background: #333;
+    display: none;
+    flex-direction: column;
+    z-index: 1000;
+  }
+
+  nav.show {
+    display: flex;
+  }
+
+  nav ul {
+    flex-direction: column;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+
+  nav ul li {
+    width: 100%;
+    text-align: center;
+    margin: 0;
+  }
+
+  nav ul li a {
+    display: block;
+    padding: 12px;
+    text-decoration: none;
+    color: #fff;
+    border-top: 1px solid #444;
+  }
+
+  nav ul li a:hover {
+    background: #575757;
+  }
+
+  main {
+    margin-left: 0;
+    padding: 80px 10px 20px;
+  }
+
+  section {
+    margin: 10px auto;
+    padding: 15px;
+  }
+}
+
 
   nav {
     position: fixed;
@@ -203,7 +274,8 @@
   </a>
 </div> -->
 
-    <nav>
+    <div class="hamburger" onclick="toggleMenu()">&#9776;</div>
+<nav>
         <ul>
             <li><a href="#profile">Profile</a></li>
             <li><a href="#key-skills">Key Skills</a></li>
@@ -648,5 +720,11 @@
             </ul>
         </section>
     </main>
+<script>
+  function toggleMenu() {
+    const nav = document.querySelector('nav');
+    nav.classList.toggle('show');
+  }
+</script>
 </body>
 </html>
